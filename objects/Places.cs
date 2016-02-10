@@ -18,9 +18,13 @@ namespace Places.Objects
     {
       newCityName = _cityName;
     }
-    public static List<Place> GetAllCities()
+    public static List<Place> GetAllPlaces()
     {
       return _instances;
+    }
+    public static void ClearAllPlaces()
+    {
+      _instances.Clear();
     }
   }
 }

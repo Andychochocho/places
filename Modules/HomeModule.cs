@@ -11,8 +11,12 @@ namespace PlacesName
       Get["/"] = _ => View["formPlaces.cshtml"];
       Post["/viewPlaces"] = _ => {
         Place newPlace = new Place(Request.Form["placeCity"]);
-        List<Place> allLists = Place.GetAllCities();
+        List<Place> allLists = Place.GetAllPlaces();
         return View["viewPlaces.cshtml", allLists];
+      };
+      Get ["/clearPlaces"] = _ => {
+        Place.ClearAllPlaces();
+        return View["clearPlaces.cshtml"];
       };
     }
   }

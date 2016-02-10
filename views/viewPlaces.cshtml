@@ -1,9 +1,9 @@
 <h1>Places you have visited</h1>
 <ul>
-  @foreach (var x in Model)
+  @foreach (var place in Model)
   {
-    <!-- <li><a href="/"></a></li> -->
-    Console.WriteLine("Place");
+    <li>@place.GetCities()</li>
   }
 </ul>
 <a href="/">Add another place</a>
+<a href="/clearPlaces">Clear all</a>
