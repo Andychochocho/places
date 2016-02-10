@@ -3,7 +3,7 @@
   @foreach (var place in Model)
   {
     <li>
-      @place.GetCities()
+      <a href='viewPlaces/@place.GetId()'>@place.GetCities()</a>
       <li>
         @place.GetDays()
       </li>

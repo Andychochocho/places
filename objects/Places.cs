@@ -6,6 +6,7 @@ namespace Places.Objects
     private string _cityName;
     private int _dayStayed;
     private string _pictureLink;
+    private int _id;
     private static List<Place> _instances = new List<Place> {};
     public Place(string CityName, int DayStayed, string PictureLink)
     {
@@ -13,6 +14,7 @@ namespace Places.Objects
       _dayStayed = DayStayed;
       _pictureLink = PictureLink;
       _instances.Add(this);
+      _id = _instances.Count;
     }
     public string GetCities()
     {
@@ -39,6 +41,11 @@ namespace Places.Objects
       newPicture = _pictureLink;
     }
 
+    public int GetId()
+    {
+      return _id;
+    }
+
     public static List<Place> GetAllPlaces()
     {
       return _instances;
@@ -46,6 +53,10 @@ namespace Places.Objects
     public static void ClearAllPlaces()
     {
       _instances.Clear();
+    }
+    public static Place Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
   }
 }
