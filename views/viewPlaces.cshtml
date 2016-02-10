@@ -2,7 +2,15 @@
 <ul>
   @foreach (var place in Model)
   {
-    <li>@place.GetCities()</li>
+    <li>
+      @place.GetCities()
+      <li>
+        @place.GetDays()
+      </li>
+      <li>
+        <img src="@place.GetPicture()">
+      </li>
+    </li>
   }
 </ul>
 <a href="/">Add another place</a>

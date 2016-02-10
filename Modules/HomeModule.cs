@@ -10,7 +10,7 @@ namespace PlacesName
     {
       Get["/"] = _ => View["formPlaces.cshtml"];
       Post["/viewPlaces"] = _ => {
-        Place newPlace = new Place(Request.Form["placeCity"]);
+        Place newPlace = new Place(Request.Form["placeCity"], Request.Form["StayedDays"], Request.Form["AddPicture"]);
         List<Place> allLists = Place.GetAllPlaces();
         return View["viewPlaces.cshtml", allLists];
       };
